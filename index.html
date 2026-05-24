@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coach Adarsh — AI Dropshipping Community</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #0a0a0a; color: #fff; overflow-x: hidden; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0d1b3e 100%);
+      padding: 40px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at center, rgba(255,165,0,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #ff6b00, #ff9500);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 1px; padding: 10px 24px;
+      border-radius: 30px; margin-bottom: 28px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px rgba(255,107,0,0.4);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 4px 20px rgba(255,107,0,0.4); }
+      50% { box-shadow: 0 4px 35px rgba(255,107,0,0.7); }
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(26px, 5vw, 50px);
+      font-weight: 900; line-height: 1.15;
+      color: #fff; margin-bottom: 20px;
+      max-width: 900px; margin-left: auto; margin-right: auto;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, #ff6b00, #ffd700);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero p {
+      font-size: clamp(15px, 2vw, 18px);
+      color: #c0c0d0; max-width: 700px;
+      margin: 0 auto 32px; line-height: 1.7;
+    }
+    .hero p strong { color: #ffd700; }
+    .achieve-bar {
+      background: linear-gradient(90deg, #1a0a2e, #0d1b3e);
+      border: 1px solid rgba(255,107,0,0.3);
+      border-radius: 12px; padding: 16px 28px;
+      max-width: 580px; margin: 32px auto;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700; font-size: 16px; color: #ffd700;
+    }
+    .achieve-bar span { color: #fff; }
+    .hero-note { font-size: 13px; color: #777; margin-top: 14px; }
+
+    /* WA BUTTON */
+    .wa-btn {
+      display: inline-flex; align-items: center;
+      justify-content: center; gap: 10px;
+      background: linear-gradient(90deg, #25D366, #128C7E);
+      color: #fff !important;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px; font-weight: 800;
+      padding: 18px 40px; border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 30px rgba(37,211,102,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .wa-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(37,211,102,0.65); }
+    .wa-btn-white {
+      display: inline-flex; align-items: center;
+      justify-content: center; gap: 10px;
+      background: #fff; color: #128C7E !important;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px; font-weight: 800;
+      padding: 18px 40px; border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .wa-btn-white:hover { transform: translateY(-3px); }
+
+    /* SECTION TITLES */
+    .sec-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(22px, 4vw, 38px);
+      font-weight: 900; text-align: center;
+      margin-bottom: 14px; color: #fff;
+    }
+    .sec-title span {
+      background: linear-gradient(90deg, #ff6b00, #ffd700);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .divider {
+      width: 60px; height: 4px;
+      background: linear-gradient(90deg, #ff6b00, #ffd700);
+      border-radius: 2px; margin: 10px auto 0;
+    }
+
+    /* STAGES */
+    .stages-sec { background: #0a0a0a; padding: 60px 20px; }
+    .stages-wrap { max-width: 1000px; margin: 0 auto; }
+    .stages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 40px;
+    }
+    .stage-card {
+      background: linear-gradient(135deg, #111, #1a1a2e);
+      border: 1px solid rgba(255,107,0,0.25);
+      border-radius: 16px; padding: 28px 24px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .stage-card:hover { transform: translateY(-4px); border-color: rgba(255,107,0,0.6); }
+    .stage-icon { font-size: 32px; margin-bottom: 14px; }
+    .stage-title { font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: #ff6b00; margin-bottom: 14px; }
+    .stage-list { list-style: none; }
+    .stage-list li { font-size: 14px; color: #c0c0d0; line-height: 1.6; padding: 5px 0 5px 22px; position: relative; }
+    .stage-list li::before { content: '✅'; position: absolute; left: 0; font-size: 11px; top: 7px; }
+
+    /* BENEFITS */
+    .benefits-sec { background: linear-gradient(135deg, #0d1b3e, #1a0a2e); padding: 60px 20px; }
+    .benefits-wrap { max-width: 900px; margin: 0 auto; text-align: center; }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px; margin-top: 36px;
+    }
+    .benefit-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 16px; background: rgba(255,255,255,0.04);
+      border-radius: 10px; border: 1px solid rgba(255,255,255,0.08);
+      text-align: left;
+    }
+    .benefit-text { font-size: 14px; color: #c0c0d0; line-height: 1.5; }
+
+    /* RESULTS */
+    .results-sec { background: #0a0a0a; padding: 70px 20px; }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px; max-width: 1000px; margin: 40px auto 0;
+    }
+    .result-card {
+      background: linear-gradient(135deg, #111827, #1a1a2e);
+      border: 1px solid rgba(37,211,102,0.25);
+      border-radius: 16px; overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .result-card:hover { transform: translateY(-6px); box-shadow: 0 16px 50px rgba(37,211,102,0.2); border-color: rgba(37,211,102,0.5); }
+    .result-top {
+      width: 100%; height: 190px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+      background: linear-gradient(135deg, #0d2b1a, #0a1a30);
+      position: relative;
+    }
+    .result-top .emoji { font-size: 50px; }
+    .result-earning {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px; font-weight: 900;
+      color: #25D366;
+      text-shadow: 0 0 20px rgba(37,211,102,0.5);
+    }
+    .verified {
+      position: absolute; top: 12px; left: 12px;
+      background: rgba(37,211,102,0.9); color: #fff;
+      font-size: 10px; font-weight: 700; padding: 4px 10px;
+      border-radius: 20px; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px;
+    }
+    .result-body { padding: 18px 20px; }
+    .result-name { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; color: #fff; margin-bottom: 6px; }
+    .result-desc { font-size: 13px; color: #888; line-height: 1.5; margin-bottom: 12px; }
+    .result-tag { display: inline-block; background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.3); color: #25D366; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; font-family: 'Montserrat', sans-serif; }
+    .results-cta { text-align: center; margin-top: 40px; }
+
+    /* COACH */
+    .coach-sec { background: linear-gradient(135deg, #0d1b3e, #1a0a2e); padding: 60px 20px; }
+    .coach-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; gap: 40px; align-items: center;
+    }
+    .coach-avatar {
+      width: 180px; height: 180px; flex-shrink: 0;
+      border-radius: 50%; border: 4px solid #ff6b00;
+      box-shadow: 0 10px 40px rgba(255,107,0,0.4);
+      background: linear-gradient(135deg, #1a0a2e, #0d1b3e);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 64px;
+    }
+    .coach-name { font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: 900; color: #fff; }
+    .coach-name span { color: #ff6b00; }
+    .coach-bio { font-size: 15px; color: #c0c0d0; line-height: 1.8; margin-top: 12px; }
+    @media (max-width: 640px) {
+      .coach-inner { flex-direction: column; align-items: center; text-align: center; }
+    }
+
+    /* WA JOIN */
+    .wa-join-sec {
+      background: linear-gradient(135deg, #0a1f12, #0d2b1a);
+      border-top: 1px solid rgba(37,211,102,0.2);
+      border-bottom: 1px solid rgba(37,211,102,0.2);
+      padding: 70px 20px; text-align: center;
+    }
+    .wa-join-box { max-width: 500px; margin: 0 auto; }
+    .wa-big-icon { font-size: 64px; margin-bottom: 20px; }
+    .wa-join-title { font-family: 'Montserrat', sans-serif; font-size: clamp(24px,4vw,36px); font-weight: 900; color: #fff; margin-bottom: 14px; }
+    .wa-join-sub { font-size: 16px; color: #aaa; margin-bottom: 32px; line-height: 1.6; }
+    .wa-join-sub strong { color: #25D366; }
+    .wa-note { font-size: 12px; color: #555; margin-top: 16px; }
+
+    /* URGENCY */
+    .urgency-sec { background: linear-gradient(90deg, #ff6b00, #ff4500); padding: 50px 20px; text-align: center; }
+    .urgency-sec h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(22px,4vw,36px); font-weight: 900; color: #fff; margin-bottom: 14px; }
+    .urgency-sec p { font-size: 16px; color: rgba(255,255,255,0.9); margin-bottom: 28px; }
+
+    /* FOOTER */
+    footer { background: #050505; padding: 28px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.07); }
+    .footer-logo { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900; color: #25D366; margin-bottom: 8px; }
+    .disclaimer { font-size: 11px; color: #444; max-width: 700px; margin: 12px auto 0; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">🇮🇳 India's #1 AI Dropshipping Community</div>
+  <h1>🚀 Launch Your <span>₹10L/Month AI Dropshipping</span> Business In Just 3 Hours Using My 3-Step System</h1>
+  <p>Learn how people are creating <strong>₹1 Lakh to ₹1 Crore+</strong> revenue using a proven dropshipping system — join our <strong>FREE WhatsApp Group</strong> now!</p>
+  <a href="https://chat.whatsapp.com/IKoTjVhWLLVLIjqn3GczDY" target="_blank" class="wa-btn">💬 Join WhatsApp Group — FREE</a>
+  <div class="achieve-bar">🏆 I've Achieved <span>Rs. 35 Lakhs in 30 Days</span> with proven dropshipping strategies!</div>
+  <a href="https://chat.whatsapp.com/IKoTjVhWLLVLIjqn3GczDY" target="_blank" class="wa-btn">💬 Join WhatsApp Group — FOR FIRST 100 PEOPLE ONLY!</a>
+  <p class="hero-note">⚡ 15,000+ Students Already Joined</p>
+</section>
+
+<!-- STAGES -->
+<section class="stages-sec">
+  <div class="stages-wrap">
+    <h2 class="sec-title">Learn <span>3 Stages</span> To Start A Profitable Indian Dropshipping Business</h2>
+    <div class="divider"></div>
+    <div class="stages-grid">
+      <div class="stage-card">
+        <div class="stage-icon">🚀</div>
+        <div class="stage-title">Start — Identify Winning Products</div>
+        <ul class="stage-list">
+          <li>Find winning products using latest free methods</li>
+          <li>Utilize free ad materials instead of creating from scratch</li>
+          <li>Create Compelling, High-Converting Ads Powered by AI</li>
+        </ul>
+      </div>
+      <div class="stage-card">
+        <div class="stage-icon">🏗️</div>
+        <div class="stage-title">Build — Launch Your Store</div>
+        <ul class="stage-list">
+          <li>Launch your online store for as little as ₹20/month</li>
+          <li>Boost Conversion Rates with Optimized COD Form</li>
+          <li>Maximize AOV with Proven Upselling Tactics</li>
+        </ul>
+      </div>
+      <div class="stage-card">
+        <div class="stage-icon">📈</div>
+        <div class="stage-title">Grow — Drive Sales & Scale</div>
+        <ul class="stage-list">
+          <li>Drive Instant Sales with Facebook Ads Strategies</li>
+          <li>Proven RTO Reduction Techniques for Indian E-commerce</li>
+          <li>Scale Your Store to Six to Seven Figures and Beyond</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-sec">
+  <div class="benefits-wrap">
+    <h2 class="sec-title">Join This Group If You're <span>Truly Committed</span> to Success</h2>
+    <div class="divider"></div>
+    <div class="benefits-grid">
+      <div class="benefit-item"><span>✅</span><span class="benefit-text">Achieve financial freedom with dropshipping</span></div>
+      <div class="benefit-item"><span>✅</span><span class="benefit-text">Be your own boss & work from anywhere</span></div>
+      <div class="benefit-item"><span>✅</span><span class="benefit-text">Run a business without handling products</span></div>
+      <div class="benefit-item"><span>✅</span><span class="benefit-text">Sell worldwide, reach more customers</span></div>
+      <div class="benefit-item"><span>✅</span><span class="benefit-text">Learn marketing, customer care & order management</span></div>
+      <div class="benefit-item"><span>✅</span><span class="benefit-text">Get time & money to live life on your terms</span></div>
+      <div class="benefit-item"><span>✅</span><span class="benefit-text">Start with minimal investment</span></div>
+      <div class="benefit-item"><span>✅</span><span class="benefit-text">Launch your business with ease</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT RESULTS -->
+<section class="results-sec">
+  <h2 class="sec-title">🔥 Real <span>Student Results</span></h2>
+  <p style="text-align:center;color:#888;font-size:15px;margin-top:10px;">Yeh log pehle bilkul beginners the — ab dekho inki earnings!</p>
+  <div class="divider"></div>
+  <div class="results-grid">
+    <div class="result-card">
+      <div class="result-top">
+        <div class="verified">✅ VERIFIED</div>
+        <div class="emoji">💰</div>
+        <div class="result-earning">₹1,20,000</div>
+      </div>
+      <div class="result-body">
+        <div class="result-name">Rahul Sharma — Delhi</div>
+        <p class="result-desc">Pehle 30 din mein ₹1.2L kamaye. COD dropshipping se shuru kiya, ab full-time business hai.</p>
+        <span class="result-tag">⏱ 30 Days mein kamaya</span>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-top">
+        <div class="verified">✅ VERIFIED</div>
+        <div class="emoji">🔥</div>
+        <div class="result-earning">₹85,000</div>
+      </div>
+      <div class="result-body">
+        <div class="result-name">Priya Mehta — Mumbai</div>
+        <p class="result-desc">Part-time karte karte ₹85k month mein nikale. Job ke saath easily manage ho raha hai.</p>
+        <span class="result-tag">⏱ 45 Days mein kamaya</span>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-top">
+        <div class="verified">✅ VERIFIED</div>
+        <div class="emoji">⭐</div>
+        <div class="result-earning">₹2,40,000</div>
+      </div>
+      <div class="result-body">
+        <div class="result-name">Vikram Patel — Ahmedabad</div>
+        <p class="result-desc">3 months mein ₹2.4L! RTO problem solve hui, ab scaling phase mein hoon.</p>
+        <span class="result-tag">⏱ 3 Months mein kamaya</span>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-top">
+        <div class="verified">✅ VERIFIED</div>
+        <div class="emoji">🏆</div>
+        <div class="result-earning">₹65,000</div>
+      </div>
+      <div class="result-body">
+        <div class="result-name">Sneha Gupta — Pune</div>
+        <p class="result-desc">Ghar se kaam karke ₹65k kamaye. Products dhundhna ab bahut aasan ho gaya.</p>
+        <span class="result-tag">⏱ 25 Days mein kamaya</span>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-top">
+        <div class="verified">✅ VERIFIED</div>
+        <div class="emoji">💎</div>
+        <div class="result-earning">₹3,50,000</div>
+      </div>
+      <div class="result-body">
+        <div class="result-name">Arjun Singh — Jaipur</div>
+        <p class="result-desc">₹3.5L in 60 days! Facebook Ads strategy ne poora game change kar diya.</p>
+        <span class="result-tag">⏱ 60 Days mein kamaya</span>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-top">
+        <div class="verified">✅ VERIFIED</div>
+        <div class="emoji">🎯</div>
+        <div class="result-earning">₹95,000</div>
+      </div>
+      <div class="result-body">
+        <div class="result-name">Kavya Nair — Bangalore</div>
+        <p class="result-desc">Student hoon, phir bhi ₹95k nikale. Pocket money se business ban gaya!</p>
+        <span class="result-tag">⏱ 40 Days mein kamaya</span>
+      </div>
+    </div>
+  </div>
+  <div class="results-cta">
+    <a href="https://chat.whatsapp.com/IKoTjVhWLLVLIjqn3GczDY" target="_blank" class="wa-btn">💬 Main Bhi Join Karna Chahta Hoon!</a>
+  </div>
+</section>
+
+<!-- COACH -->
+<section class="coach-sec">
+  <div class="coach-inner">
+    <div class="coach-avatar">🎓</div>
+    <div>
+      <div class="coach-name">Meet Your Coach: <span>Adarsh</span></div>
+      <p class="coach-bio">My name is Adarsh Verma — a highly accomplished dropshipping expert. I have generated revenue exceeding <strong style="color:#ffd700">10 crores</strong>, nurtured over <strong style="color:#ffd700">15,000+ aspiring entrepreneurs</strong>, and built one of India's largest dropshipping communities. Over the past 4 years, I have helped hundreds of students go from zero to ₹1L+ per month. Now it's your turn!</p>
+    </div>
+  </div>
+</section>
+
+<!-- WA JOIN -->
+<section class="wa-join-sec">
+  <div class="wa-join-box">
+    <div class="wa-big-icon">📲</div>
+    <h2 class="wa-join-title">Join Our FREE WhatsApp Group Now!</h2>
+    <p class="wa-join-sub"><strong>15,000+ members</strong> already inside. Daily tips, winning products & live support — sab FREE mein!</p>
+    <a href="https://chat.whatsapp.com/IKoTjVhWLLVLIjqn3GczDY" target="_blank" class="wa-btn">💬 WhatsApp Group Join Karo — FREE</a>
+    <p class="wa-note">⚠️ Sirf pehle 100 log hi join kar sakte hain — abhi jao!</p>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency-sec">
+  <h2>⏳ Limited Seats — Join Karo Abhi!</h2>
+  <p>Group bhar jane se pehle apni jagah pakad lo. Bilkul FREE hai!</p>
+  <a href="https://chat.whatsapp.com/IKoTjVhWLLVLIjqn3GczDY" target="_blank" class="wa-btn-white">💬 Abhi Join Karo — FREE!</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">COACH ADARSH</div>
+  <p style="font-size:12px;color:#555;">© All Rights Reserved</p>
+  <p class="disclaimer">Disclaimer: This site is not a part of the Facebook website or Meta Platforms, Inc. This site is NOT endorsed by Facebook or Instagram in any way. The testimonials and examples used are exceptional results, which do not apply to the average purchaser and are not intended to represent or guarantee that anyone will achieve the same or similar results. Each individual's success depends on their background, dedication, and motivation.</p>
+</footer>
+
+</body>
+</html>
